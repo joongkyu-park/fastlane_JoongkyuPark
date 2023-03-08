@@ -1,0 +1,6 @@
+excluded:
+    - Pods
+    - fastlane_JoongkyuPark/Application
+    - Libraries
+disabled_rules:
+    - line_length

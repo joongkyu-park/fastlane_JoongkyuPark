@@ -15,6 +15,8 @@
 		18911D9E29B867C800F5C604 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18911D9D29B867C800F5C604 /* Main.storyboard */; };
 		18911DA229B8720500F5C604 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 18911DA129B8720500F5C604 /* README.md */; };
 		18911DA429B8721800F5C604 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 18911DA329B8721800F5C604 /* .gitignore */; };
+		18C23A0629B87B6200C36BCE /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 18C23A0529B87B6200C36BCE /* .swiftlint.yml */; };
+		4876EDAB518A939DE9073796 /* Pods_fastlane_JoongkyuPark.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A11F1E15E0984FD674B3512D /* Pods_fastlane_JoongkyuPark.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,10 @@
 		18911D9D29B867C800F5C604 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		18911DA129B8720500F5C604 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		18911DA329B8721800F5C604 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		18C23A0529B87B6200C36BCE /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		41C9B9DE696D689DF2EC3565 /* Pods-fastlane_JoongkyuPark.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fastlane_JoongkyuPark.release.xcconfig"; path = "Target Support Files/Pods-fastlane_JoongkyuPark/Pods-fastlane_JoongkyuPark.release.xcconfig"; sourceTree = "<group>"; };
+		8A5BCA6465EB5C3BEE6CBCAE /* Pods-fastlane_JoongkyuPark.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fastlane_JoongkyuPark.debug.xcconfig"; path = "Target Support Files/Pods-fastlane_JoongkyuPark/Pods-fastlane_JoongkyuPark.debug.xcconfig"; sourceTree = "<group>"; };
+		A11F1E15E0984FD674B3512D /* Pods_fastlane_JoongkyuPark.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fastlane_JoongkyuPark.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4876EDAB518A939DE9073796 /* Pods_fastlane_JoongkyuPark.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,10 +51,13 @@
 		18911D7929B83D2F00F5C604 = {
 			isa = PBXGroup;
 			children = (
+				18C23A0529B87B6200C36BCE /* .swiftlint.yml */,
 				18911DA329B8721800F5C604 /* .gitignore */,
 				18911DA129B8720500F5C604 /* README.md */,
 				18911D8429B83D3000F5C604 /* fastlane_JoongkyuPark */,
 				18911D8329B83D3000F5C604 /* Products */,
+				72C7A654D49F8CA79E3099BF /* Frameworks */,
+				7D7D529A8F7D96241FA914D2 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +107,23 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
+		72C7A654D49F8CA79E3099BF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A11F1E15E0984FD674B3512D /* Pods_fastlane_JoongkyuPark.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7D7D529A8F7D96241FA914D2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8A5BCA6465EB5C3BEE6CBCAE /* Pods-fastlane_JoongkyuPark.debug.xcconfig */,
+				41C9B9DE696D689DF2EC3565 /* Pods-fastlane_JoongkyuPark.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -104,9 +131,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18911D9629B83D3400F5C604 /* Build configuration list for PBXNativeTarget "fastlane_JoongkyuPark" */;
 			buildPhases = (
+				62C4B330D5F64631C4880B62 /* [CP] Check Pods Manifest.lock */,
+				18C23A0729B8808500C36BCE /* SwiftLint Script */,
 				18911D7E29B83D3000F5C604 /* Sources */,
 				18911D7F29B83D3000F5C604 /* Frameworks */,
 				18911D8029B83D3000F5C604 /* Resources */,
+				7364B3289B653F23CD0E12BC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -155,6 +185,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18C23A0629B87B6200C36BCE /* .swiftlint.yml in Resources */,
 				18911DA429B8721800F5C604 /* .gitignore in Resources */,
 				18911D9E29B867C800F5C604 /* Main.storyboard in Resources */,
 				18911D9229B83D3400F5C604 /* LaunchScreen.storyboard in Resources */,
@@ -164,6 +195,67 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		18C23A0729B8808500C36BCE /* SwiftLint Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "SwiftLint Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		62C4B330D5F64631C4880B62 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-fastlane_JoongkyuPark-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7364B3289B653F23CD0E12BC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-fastlane_JoongkyuPark/Pods-fastlane_JoongkyuPark-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-fastlane_JoongkyuPark/Pods-fastlane_JoongkyuPark-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-fastlane_JoongkyuPark/Pods-fastlane_JoongkyuPark-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		18911D7E29B83D3000F5C604 /* Sources */ = {
@@ -306,6 +398,7 @@
 		};
 		18911D9729B83D3400F5C604 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A5BCA6465EB5C3BEE6CBCAE /* Pods-fastlane_JoongkyuPark.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -335,6 +428,7 @@
 		};
 		18911D9829B83D3400F5C604 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41C9B9DE696D689DF2EC3565 /* Pods-fastlane_JoongkyuPark.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

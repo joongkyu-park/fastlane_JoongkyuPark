@@ -2,3 +2,10 @@
 
 ## Deployment Target
 - iOS 11.0
+
+## 라이브러리
+- 라이브러리 관리
+    - CocoaPods
+- 사용 라이브러리
+    - RxSwift, RxCocoa
+    - SwiftLint

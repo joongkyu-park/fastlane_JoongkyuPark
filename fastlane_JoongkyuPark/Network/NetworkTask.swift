@@ -8,7 +8,5 @@
 import Foundation
 
 enum NetworkTask {
-    
     case requestPlain
-    
 }

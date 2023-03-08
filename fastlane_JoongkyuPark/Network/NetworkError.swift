@@ -8,7 +8,6 @@
 import Foundation
 
 enum NetworkError: Error {
-    
     case httpError(Int)
     case invalidURLComponents(String)
     case invalidURLString
@@ -32,5 +31,4 @@ enum NetworkError: Error {
             return "Non data."
         }
     }
-    
 }

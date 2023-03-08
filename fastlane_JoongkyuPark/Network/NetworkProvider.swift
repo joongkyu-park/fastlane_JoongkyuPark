@@ -8,7 +8,6 @@
 import Foundation
 
 struct NetworkProvider<Target: TargetType> {
-    
     func request(_ target: Target) throws -> URLRequest {
         let path = target.baseURL + target.path
         guard let urlComponents = URLComponents(string: path) else {
@@ -32,5 +31,4 @@ struct NetworkProvider<Target: TargetType> {
         }
         return request
     }
-    
 }

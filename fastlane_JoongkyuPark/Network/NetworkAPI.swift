@@ -10,13 +10,10 @@ import Foundation
 import RxSwift
 
 struct NetworkAPI {
-    
     private let provider = NetworkProvider<NetworkService>()
-    
 }
 
 extension NetworkAPI {
-    
     func get(targetType: NetworkService) -> Observable<Result<Data, NetworkError>> {
         return Observable.create { emitter in
             do {
@@ -52,5 +49,4 @@ extension NetworkAPI {
             return Disposables.create()
         }
     }
-    
 }

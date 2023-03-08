@@ -8,13 +8,10 @@
 import Foundation
 
 enum NetworkService {
-    
     case getYeoshin
-    
 }
 
 extension NetworkService: TargetType {
-    
     var baseURL: String {
         switch self {
         case .getYeoshin:
@@ -49,5 +46,4 @@ extension NetworkService: TargetType {
             return ["Content-Type": "application/json"]
         }
     }
-    
 }

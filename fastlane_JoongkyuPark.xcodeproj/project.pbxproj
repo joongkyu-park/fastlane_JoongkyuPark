@@ -16,6 +16,13 @@
 		18911DA229B8720500F5C604 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 18911DA129B8720500F5C604 /* README.md */; };
 		18911DA429B8721800F5C604 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 18911DA329B8721800F5C604 /* .gitignore */; };
 		18C23A0629B87B6200C36BCE /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 18C23A0529B87B6200C36BCE /* .swiftlint.yml */; };
+		18C23A0E29B8E28B00C36BCE /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C23A0D29B8E28B00C36BCE /* NetworkProvider.swift */; };
+		18C23A1029B8E29D00C36BCE /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C23A0F29B8E29D00C36BCE /* NetworkService.swift */; };
+		18C23A1229B8E2A800C36BCE /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C23A1129B8E2A800C36BCE /* TargetType.swift */; };
+		18C23A1429B8E2B000C36BCE /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C23A1329B8E2B000C36BCE /* HTTPMethod.swift */; };
+		18C23A1629B8E2B900C36BCE /* NetworkTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C23A1529B8E2B900C36BCE /* NetworkTask.swift */; };
+		18C23A1829B8E45E00C36BCE /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C23A1729B8E45E00C36BCE /* NetworkError.swift */; };
+		18C23A1A29B8E92E00C36BCE /* NetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C23A1929B8E92E00C36BCE /* NetworkAPI.swift */; };
 		4876EDAB518A939DE9073796 /* Pods_fastlane_JoongkyuPark.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A11F1E15E0984FD674B3512D /* Pods_fastlane_JoongkyuPark.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +38,13 @@
 		18911DA129B8720500F5C604 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		18911DA329B8721800F5C604 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		18C23A0529B87B6200C36BCE /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		18C23A0D29B8E28B00C36BCE /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
+		18C23A0F29B8E29D00C36BCE /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		18C23A1129B8E2A800C36BCE /* TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
+		18C23A1329B8E2B000C36BCE /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		18C23A1529B8E2B900C36BCE /* NetworkTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTask.swift; sourceTree = "<group>"; };
+		18C23A1729B8E45E00C36BCE /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		18C23A1929B8E92E00C36BCE /* NetworkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPI.swift; sourceTree = "<group>"; };
 		41C9B9DE696D689DF2EC3565 /* Pods-fastlane_JoongkyuPark.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fastlane_JoongkyuPark.release.xcconfig"; path = "Target Support Files/Pods-fastlane_JoongkyuPark/Pods-fastlane_JoongkyuPark.release.xcconfig"; sourceTree = "<group>"; };
 		8A5BCA6465EB5C3BEE6CBCAE /* Pods-fastlane_JoongkyuPark.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fastlane_JoongkyuPark.debug.xcconfig"; path = "Target Support Files/Pods-fastlane_JoongkyuPark/Pods-fastlane_JoongkyuPark.debug.xcconfig"; sourceTree = "<group>"; };
 		A11F1E15E0984FD674B3512D /* Pods_fastlane_JoongkyuPark.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fastlane_JoongkyuPark.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +89,7 @@
 				18911D9F29B868D100F5C604 /* Resource */,
 				18911D9929B857B900F5C604 /* Application */,
 				18911D8929B83D3000F5C604 /* HomeViewController.swift */,
+				18C23A0B29B8DF5D00C36BCE /* Data */,
 			);
 			path = fastlane_JoongkyuPark;
 			sourceTree = "<group>";
@@ -105,6 +120,28 @@
 				18911D9029B83D3400F5C604 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		18C23A0B29B8DF5D00C36BCE /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				18C23A0C29B8DF6600C36BCE /* Network */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		18C23A0C29B8DF6600C36BCE /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				18C23A1929B8E92E00C36BCE /* NetworkAPI.swift */,
+				18C23A0D29B8E28B00C36BCE /* NetworkProvider.swift */,
+				18C23A0F29B8E29D00C36BCE /* NetworkService.swift */,
+				18C23A1129B8E2A800C36BCE /* TargetType.swift */,
+				18C23A1329B8E2B000C36BCE /* HTTPMethod.swift */,
+				18C23A1529B8E2B900C36BCE /* NetworkTask.swift */,
+				18C23A1729B8E45E00C36BCE /* NetworkError.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		72C7A654D49F8CA79E3099BF /* Frameworks */ = {
@@ -262,7 +299,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18C23A1229B8E2A800C36BCE /* TargetType.swift in Sources */,
+				18C23A1A29B8E92E00C36BCE /* NetworkAPI.swift in Sources */,
+				18C23A1629B8E2B900C36BCE /* NetworkTask.swift in Sources */,
+				18C23A1029B8E29D00C36BCE /* NetworkService.swift in Sources */,
+				18C23A1429B8E2B000C36BCE /* HTTPMethod.swift in Sources */,
 				18911D8A29B83D3000F5C604 /* HomeViewController.swift in Sources */,
+				18C23A0E29B8E28B00C36BCE /* NetworkProvider.swift in Sources */,
+				18C23A1829B8E45E00C36BCE /* NetworkError.swift in Sources */,
 				18911D8629B83D3000F5C604 /* AppDelegate.swift in Sources */,
 				18911D8829B83D3000F5C604 /* SceneDelegate.swift in Sources */,
 			);

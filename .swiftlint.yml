@@ -1,6 +1,7 @@
 excluded:
     - Pods
     - fastlane_JoongkyuPark/Application
+    - fastlane_JoongkyuPark/Data/Network/DataMapping
     - Libraries
 disabled_rules:
     - line_length

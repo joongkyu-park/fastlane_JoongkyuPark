@@ -14,7 +14,6 @@ enum NetworkError: Error {
     case invalidURLString
     case invalidServerResponse
     case nonStatusCode
-    case decodeError(toType: Decodable.Type)
     case nonData
     
     var description: String {
@@ -29,8 +28,6 @@ enum NetworkError: Error {
             return "Invalid server response."
         case .nonStatusCode:
             return "Non status code."
-        case .decodeError(let type):
-            return "Decoding error(type: \(type)."
         case .nonData:
             return "Non data."
         }

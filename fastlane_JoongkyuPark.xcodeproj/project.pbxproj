@@ -23,8 +23,8 @@
 		18C23A1629B8E2B900C36BCE /* NetworkTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C23A1529B8E2B900C36BCE /* NetworkTask.swift */; };
 		18C23A1829B8E45E00C36BCE /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C23A1729B8E45E00C36BCE /* NetworkError.swift */; };
 		18C23A1A29B8E92E00C36BCE /* NetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C23A1929B8E92E00C36BCE /* NetworkAPI.swift */; };
-		18C23A1D29B8FAD800C36BCE /* NetworkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C23A1C29B8FAD800C36BCE /* NetworkRepository.swift */; };
-		18C23A2029B8FB5300C36BCE /* NetworkRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C23A1F29B8FB5300C36BCE /* NetworkRepositoryProtocol.swift */; };
+		18C23A1D29B8FAD800C36BCE /* DefaultYeoshinRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C23A1C29B8FAD800C36BCE /* DefaultYeoshinRepository.swift */; };
+		18C23A2029B8FB5300C36BCE /* YeoshinRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C23A1F29B8FB5300C36BCE /* YeoshinRepository.swift */; };
 		18C23A2629B8FE9100C36BCE /* YeoshinResponseDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C23A2529B8FE9100C36BCE /* YeoshinResponseDTO+Mapping.swift */; };
 		18C23A2A29B907D300C36BCE /* YeoshinEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C23A2929B907D300C36BCE /* YeoshinEvent.swift */; };
 		18C23A2C29B907DD00C36BCE /* YeoshinTV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C23A2B29B907DD00C36BCE /* YeoshinTV.swift */; };
@@ -52,8 +52,8 @@
 		18C23A1529B8E2B900C36BCE /* NetworkTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTask.swift; sourceTree = "<group>"; };
 		18C23A1729B8E45E00C36BCE /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		18C23A1929B8E92E00C36BCE /* NetworkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPI.swift; sourceTree = "<group>"; };
-		18C23A1C29B8FAD800C36BCE /* NetworkRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRepository.swift; sourceTree = "<group>"; };
-		18C23A1F29B8FB5300C36BCE /* NetworkRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRepositoryProtocol.swift; sourceTree = "<group>"; };
+		18C23A1C29B8FAD800C36BCE /* DefaultYeoshinRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultYeoshinRepository.swift; sourceTree = "<group>"; };
+		18C23A1F29B8FB5300C36BCE /* YeoshinRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YeoshinRepository.swift; sourceTree = "<group>"; };
 		18C23A2529B8FE9100C36BCE /* YeoshinResponseDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "YeoshinResponseDTO+Mapping.swift"; sourceTree = "<group>"; };
 		18C23A2929B907D300C36BCE /* YeoshinEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YeoshinEvent.swift; sourceTree = "<group>"; };
 		18C23A2B29B907DD00C36BCE /* YeoshinTV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YeoshinTV.swift; sourceTree = "<group>"; };
@@ -141,7 +141,7 @@
 		18C23A0B29B8DF5D00C36BCE /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				18C23A1B29B8FAC700C36BCE /* Repository */,
+				18C23A1B29B8FAC700C36BCE /* Repositories */,
 				18C23A2D29B915CB00C36BCE /* Utils */,
 				18C23A2329B8FE7100C36BCE /* Network */,
 			);
@@ -162,20 +162,20 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		18C23A1B29B8FAC700C36BCE /* Repository */ = {
+		18C23A1B29B8FAC700C36BCE /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				18C23A1C29B8FAD800C36BCE /* NetworkRepository.swift */,
+				18C23A1C29B8FAD800C36BCE /* DefaultYeoshinRepository.swift */,
 			);
-			path = Repository;
+			path = Repositories;
 			sourceTree = "<group>";
 		};
-		18C23A1E29B8FB4600C36BCE /* Interface */ = {
+		18C23A1E29B8FB4600C36BCE /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
-				18C23A1F29B8FB5300C36BCE /* NetworkRepositoryProtocol.swift */,
+				18C23A1F29B8FB5300C36BCE /* YeoshinRepository.swift */,
 			);
-			path = Interface;
+			path = Interfaces;
 			sourceTree = "<group>";
 		};
 		18C23A2329B8FE7100C36BCE /* Network */ = {
@@ -197,7 +197,7 @@
 		18C23A2729B9077A00C36BCE /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				18C23A1E29B8FB4600C36BCE /* Interface */,
+				18C23A1E29B8FB4600C36BCE /* Interfaces */,
 				18C23A2829B9079300C36BCE /* Entities */,
 			);
 			path = Domain;
@@ -386,9 +386,9 @@
 				18C23A1029B8E29D00C36BCE /* NetworkService.swift in Sources */,
 				18C23A1429B8E2B000C36BCE /* HTTPMethod.swift in Sources */,
 				18911D8A29B83D3000F5C604 /* HomeViewController.swift in Sources */,
-				18C23A2029B8FB5300C36BCE /* NetworkRepositoryProtocol.swift in Sources */,
+				18C23A2029B8FB5300C36BCE /* YeoshinRepository.swift in Sources */,
 				18C23A2F29B915D700C36BCE /* RepositoryError.swift in Sources */,
-				18C23A1D29B8FAD800C36BCE /* NetworkRepository.swift in Sources */,
+				18C23A1D29B8FAD800C36BCE /* DefaultYeoshinRepository.swift in Sources */,
 				18C23A0E29B8E28B00C36BCE /* NetworkProvider.swift in Sources */,
 				18C23A1829B8E45E00C36BCE /* NetworkError.swift in Sources */,
 				18911D8629B83D3000F5C604 /* AppDelegate.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  NetworkRepository.swift
+//  DefaultYeoshinRepository.swift
 //  fastlane_JoongkyuPark
 //
 //  Created by Apple on 2023/03/09.
@@ -9,7 +9,7 @@ import Foundation
 
 import RxSwift
 
-final class NetworkRepository: NetworkRepositoryProtocol {
+final class DefaultYeoshinRepository: YeoshinRepository {
     private let networkAPI: NetworkAPI
     
     init(networkAPI: NetworkAPI) {
@@ -32,7 +32,7 @@ final class NetworkRepository: NetworkRepositoryProtocol {
     }
 }
 
-extension NetworkRepository {
+extension DefaultYeoshinRepository {
     func decode<T: Decodable>(from data: Data, to type: T.Type) -> T? {
         return try? JSONDecoder().decode(type, from: data)
     }

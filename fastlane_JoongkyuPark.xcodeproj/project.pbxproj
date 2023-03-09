@@ -31,6 +31,7 @@
 		18C23A2F29B915D700C36BCE /* RepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C23A2E29B915D700C36BCE /* RepositoryError.swift */; };
 		18C23A3129B91AED00C36BCE /* Yeoshin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C23A3029B91AED00C36BCE /* Yeoshin.swift */; };
 		18C23A3B29B927A000C36BCE /* YeoshinUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C23A3A29B927A000C36BCE /* YeoshinUseCase.swift */; };
+		18C23A3F29B92C2F00C36BCE /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C23A3E29B92C2E00C36BCE /* HomeViewModel.swift */; };
 		4876EDAB518A939DE9073796 /* Pods_fastlane_JoongkyuPark.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A11F1E15E0984FD674B3512D /* Pods_fastlane_JoongkyuPark.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,7 @@
 		18C23A2E29B915D700C36BCE /* RepositoryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryError.swift; sourceTree = "<group>"; };
 		18C23A3029B91AED00C36BCE /* Yeoshin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yeoshin.swift; sourceTree = "<group>"; };
 		18C23A3A29B927A000C36BCE /* YeoshinUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YeoshinUseCase.swift; sourceTree = "<group>"; };
+		18C23A3E29B92C2E00C36BCE /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		41C9B9DE696D689DF2EC3565 /* Pods-fastlane_JoongkyuPark.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fastlane_JoongkyuPark.release.xcconfig"; path = "Target Support Files/Pods-fastlane_JoongkyuPark/Pods-fastlane_JoongkyuPark.release.xcconfig"; sourceTree = "<group>"; };
 		8A5BCA6465EB5C3BEE6CBCAE /* Pods-fastlane_JoongkyuPark.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fastlane_JoongkyuPark.debug.xcconfig"; path = "Target Support Files/Pods-fastlane_JoongkyuPark/Pods-fastlane_JoongkyuPark.debug.xcconfig"; sourceTree = "<group>"; };
 		A11F1E15E0984FD674B3512D /* Pods_fastlane_JoongkyuPark.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fastlane_JoongkyuPark.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,12 +104,12 @@
 		18911D8429B83D3000F5C604 /* fastlane_JoongkyuPark */ = {
 			isa = PBXGroup;
 			children = (
-				18911D9F29B868D100F5C604 /* Resource */,
-				18911D9929B857B900F5C604 /* Application */,
-				18911D8929B83D3000F5C604 /* HomeViewController.swift */,
+				18C23A3C29B92BE600C36BCE /* Presentation */,
 				18C23A2729B9077A00C36BCE /* Domain */,
 				18C23A0B29B8DF5D00C36BCE /* Data */,
 				18C23A0C29B8DF6600C36BCE /* Network */,
+				18911D9F29B868D100F5C604 /* Resource */,
+				18911D9929B857B900F5C604 /* Application */,
 			);
 			path = fastlane_JoongkyuPark;
 			sourceTree = "<group>";
@@ -230,6 +232,39 @@
 				18C23A3A29B927A000C36BCE /* YeoshinUseCase.swift */,
 			);
 			path = Usecase;
+			sourceTree = "<group>";
+		};
+		18C23A3C29B92BE600C36BCE /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				18C23A3D29B92C1D00C36BCE /* HomeScene */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		18C23A3D29B92C1D00C36BCE /* HomeScene */ = {
+			isa = PBXGroup;
+			children = (
+				18C23A4029B92C4700C36BCE /* ViewController */,
+				18C23A4129B92C4E00C36BCE /* ViewModel */,
+			);
+			path = HomeScene;
+			sourceTree = "<group>";
+		};
+		18C23A4029B92C4700C36BCE /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				18911D8929B83D3000F5C604 /* HomeViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		18C23A4129B92C4E00C36BCE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				18C23A3E29B92C2E00C36BCE /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		72C7A654D49F8CA79E3099BF /* Frameworks */ = {
@@ -387,6 +422,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18C23A3F29B92C2F00C36BCE /* HomeViewModel.swift in Sources */,
 				18C23A1229B8E2A800C36BCE /* TargetType.swift in Sources */,
 				18C23A3129B91AED00C36BCE /* Yeoshin.swift in Sources */,
 				18C23A2C29B907DD00C36BCE /* YeoshinTV.swift in Sources */,

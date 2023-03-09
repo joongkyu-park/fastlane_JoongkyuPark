@@ -6,6 +6,7 @@ target 'fastlane_JoongkyuPark' do
   use_frameworks!
 
   pod 'RxCocoa'
+  pod 'RxDataSources'
   pod 'RxSwift'
   pod 'SwiftLint'
 

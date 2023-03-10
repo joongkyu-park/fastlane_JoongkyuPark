@@ -12,7 +12,6 @@ import RxSwift
 
 final class HomeViewModel {
     private let yeoshinUseCase: YeoshinUseCase
-    private let disposeBag = DisposeBag()
     
     init(yeoshinUseCase: YeoshinUseCase) {
         self.yeoshinUseCase = yeoshinUseCase
@@ -22,23 +21,21 @@ final class HomeViewModel {
 extension HomeViewModel {
     struct Input {
         let viewDidLoadEvent: Observable<Void>
-        let didSelectItem: Observable<Int>
+        let cellDidSelectEvent: Observable<(Int, Int)>
     }
     
     struct Output {
-        var yeoshinTVs = BehaviorRelay<[YeoshinTV]>(value: [])
-        var recommendYeoshinEvents = BehaviorRelay<[YeoshinEvent]>(value: [])
-        var newYeoshinEvents = BehaviorRelay<[YeoshinEvent]>(value: [])
+        var sections = BehaviorRelay<[HomeTableViewSection]>(value: [])
     }
 }
 
 extension HomeViewModel {
-    func transform(from input: Input) -> Output {
-        self.configureInput(input)
-        return createOutput()
+    func transform(from input: Input, disposeBag: DisposeBag) -> Output {
+        self.configureInput(input, disposeBag: disposeBag)
+        return createOutput(disposeBag: disposeBag)
     }
     
-    private func configureInput(_ input: Input) {
+    private func configureInput(_ input: Input, disposeBag: DisposeBag) {
         input.viewDidLoadEvent
             .subscribe(onNext: { [weak self] in
                 guard let self = self else { return }
@@ -47,19 +44,11 @@ extension HomeViewModel {
             .disposed(by: disposeBag)
     }
     
-    private func createOutput() -> Output {
+    private func createOutput(disposeBag: DisposeBag) -> Output {
         let output = Output()
-        
-        self.yeoshinUseCase.yeoshinTVs
-            .bind(to: output.yeoshinTVs)
-            .disposed(by: disposeBag)
-        
-        self.yeoshinUseCase.recommendYeoshinEvents
-            .bind(to: output.recommendYeoshinEvents)
-            .disposed(by: disposeBag)
-        
-        self.yeoshinUseCase.newYeoshinEvents
-            .bind(to: output.newYeoshinEvents)
+    
+        self.yeoshinUseCase.sections
+            .bind(to: output.sections)
             .disposed(by: disposeBag)
         
         return output

@@ -13,9 +13,7 @@ final class YeoshinUseCase {
     private let yeoshinRepository: YeoshinRepository
     private let disposeBag = DisposeBag()
     
-    var yeoshinTVs = PublishSubject<[YeoshinTV]>()
-    var recommendYeoshinEvents = PublishSubject<[YeoshinEvent]>()
-    var newYeoshinEvents = PublishSubject<[YeoshinEvent]>()
+    var sections = PublishSubject<[HomeTableViewSection]>()
     
     init(yeoshinRepository: YeoshinRepository) {
         self.yeoshinRepository = yeoshinRepository
@@ -25,9 +23,17 @@ final class YeoshinUseCase {
         yeoshinRepository.fetchYeoshin()
             .subscribe(onNext: { [weak self] yeoshin in
                 guard let self = self else { return }
-                self.yeoshinTVs.onNext(yeoshin.yeoshinTVs)
-                self.recommendYeoshinEvents.onNext(yeoshin.recommendYeoshinEvents)
-                self.newYeoshinEvents.onNext(yeoshin.newYeoshinEvents)
+                let yeoshinTVs = yeoshin.yeoshinTVs
+                let recommendYeoshinEvents = yeoshin.recommendYeoshinEvents
+                let newYeoshinEvents = yeoshin.newYeoshinEvents
+                var sections = [HomeTableViewSection]()
+                sections.append(HomeTableViewSection(title: "여신 TV",
+                                        items: [HomeTableViewSectionItem.yeoshinTVs(yeoshinTVs: yeoshinTVs)]))
+                sections.append(HomeTableViewSection(title: "추천 이벤트",
+                                        items: recommendYeoshinEvents.map { HomeTableViewSectionItem.yeoshinEvent(yeoshinEvent: $0) }))
+                sections.append(HomeTableViewSection(title: "신규 이벤트",
+                                        items: newYeoshinEvents.map { HomeTableViewSectionItem.yeoshinEvent(yeoshinEvent: $0) }))
+                self.sections.onNext(sections)
             })
             .disposed(by: self.disposeBag)
     }

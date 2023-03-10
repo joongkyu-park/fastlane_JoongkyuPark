@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		183A936E29BAF68300E7A659 /* HomeTableViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183A936D29BAF68300E7A659 /* HomeTableViewSection.swift */; };
+		183A937029BAFDA500E7A659 /* YeoshinTVsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183A936F29BAFDA500E7A659 /* YeoshinTVsTableViewCell.swift */; };
+		183A937429BB3ADF00E7A659 /* YeoshinTVsCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183A937329BB3ADF00E7A659 /* YeoshinTVsCollectionViewModel.swift */; };
 		18911D8629B83D3000F5C604 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18911D8529B83D3000F5C604 /* AppDelegate.swift */; };
 		18911D8829B83D3000F5C604 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18911D8729B83D3000F5C604 /* SceneDelegate.swift */; };
 		18911D8A29B83D3000F5C604 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18911D8929B83D3000F5C604 /* HomeViewController.swift */; };
@@ -32,10 +35,15 @@
 		18C23A3129B91AED00C36BCE /* Yeoshin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C23A3029B91AED00C36BCE /* Yeoshin.swift */; };
 		18C23A3B29B927A000C36BCE /* YeoshinUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C23A3A29B927A000C36BCE /* YeoshinUseCase.swift */; };
 		18C23A3F29B92C2F00C36BCE /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C23A3E29B92C2E00C36BCE /* HomeViewModel.swift */; };
+		18C23A5B29BA041400C36BCE /* YeoshinTVsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C23A5A29BA041400C36BCE /* YeoshinTVsCollectionViewCell.swift */; };
+		18C23A5D29BA042900C36BCE /* YeoshinEventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C23A5C29BA042900C36BCE /* YeoshinEventsTableViewCell.swift */; };
 		4876EDAB518A939DE9073796 /* Pods_fastlane_JoongkyuPark.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A11F1E15E0984FD674B3512D /* Pods_fastlane_JoongkyuPark.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		183A936D29BAF68300E7A659 /* HomeTableViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewSection.swift; sourceTree = "<group>"; };
+		183A936F29BAFDA500E7A659 /* YeoshinTVsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YeoshinTVsTableViewCell.swift; sourceTree = "<group>"; };
+		183A937329BB3ADF00E7A659 /* YeoshinTVsCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YeoshinTVsCollectionViewModel.swift; sourceTree = "<group>"; };
 		18911D8229B83D3000F5C604 /* fastlane_JoongkyuPark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fastlane_JoongkyuPark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18911D8529B83D3000F5C604 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18911D8729B83D3000F5C604 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +71,8 @@
 		18C23A3029B91AED00C36BCE /* Yeoshin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yeoshin.swift; sourceTree = "<group>"; };
 		18C23A3A29B927A000C36BCE /* YeoshinUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YeoshinUseCase.swift; sourceTree = "<group>"; };
 		18C23A3E29B92C2E00C36BCE /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		18C23A5A29BA041400C36BCE /* YeoshinTVsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YeoshinTVsCollectionViewCell.swift; sourceTree = "<group>"; };
+		18C23A5C29BA042900C36BCE /* YeoshinEventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YeoshinEventsTableViewCell.swift; sourceTree = "<group>"; };
 		41C9B9DE696D689DF2EC3565 /* Pods-fastlane_JoongkyuPark.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fastlane_JoongkyuPark.release.xcconfig"; path = "Target Support Files/Pods-fastlane_JoongkyuPark/Pods-fastlane_JoongkyuPark.release.xcconfig"; sourceTree = "<group>"; };
 		8A5BCA6465EB5C3BEE6CBCAE /* Pods-fastlane_JoongkyuPark.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fastlane_JoongkyuPark.debug.xcconfig"; path = "Target Support Files/Pods-fastlane_JoongkyuPark/Pods-fastlane_JoongkyuPark.debug.xcconfig"; sourceTree = "<group>"; };
 		A11F1E15E0984FD674B3512D /* Pods_fastlane_JoongkyuPark.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fastlane_JoongkyuPark.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,6 +90,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		183A936C29BAF66D00E7A659 /* SectionModel */ = {
+			isa = PBXGroup;
+			children = (
+				183A936D29BAF68300E7A659 /* HomeTableViewSection.swift */,
+			);
+			path = SectionModel;
+			sourceTree = "<group>";
+		};
 		18911D7929B83D2F00F5C604 = {
 			isa = PBXGroup;
 			children = (
@@ -245,13 +263,40 @@
 		18C23A3D29B92C1D00C36BCE /* HomeScene */ = {
 			isa = PBXGroup;
 			children = (
-				18C23A4029B92C4700C36BCE /* ViewController */,
+				18C23A4029B92C4700C36BCE /* View */,
 				18C23A4129B92C4E00C36BCE /* ViewModel */,
 			);
 			path = HomeScene;
 			sourceTree = "<group>";
 		};
-		18C23A4029B92C4700C36BCE /* ViewController */ = {
+		18C23A4029B92C4700C36BCE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				18C23A5529BA034E00C36BCE /* ViewController */,
+				18C23A4829B9F00700C36BCE /* View */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		18C23A4129B92C4E00C36BCE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				18C23A3E29B92C2E00C36BCE /* HomeViewModel.swift */,
+				183A937329BB3ADF00E7A659 /* YeoshinTVsCollectionViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		18C23A4829B9F00700C36BCE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				18C23A5729BA03E500C36BCE /* HomeTableView */,
+				18C23A5629BA03DB00C36BCE /* YeoshinTVsCollectionView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		18C23A5529BA034E00C36BCE /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				18911D8929B83D3000F5C604 /* HomeViewController.swift */,
@@ -259,12 +304,38 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		18C23A4129B92C4E00C36BCE /* ViewModel */ = {
+		18C23A5629BA03DB00C36BCE /* YeoshinTVsCollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				18C23A3E29B92C2E00C36BCE /* HomeViewModel.swift */,
+				18C23A5829BA03F200C36BCE /* Cell */,
 			);
-			path = ViewModel;
+			path = YeoshinTVsCollectionView;
+			sourceTree = "<group>";
+		};
+		18C23A5729BA03E500C36BCE /* HomeTableView */ = {
+			isa = PBXGroup;
+			children = (
+				183A936C29BAF66D00E7A659 /* SectionModel */,
+				18C23A5929BA03F800C36BCE /* Cell */,
+			);
+			path = HomeTableView;
+			sourceTree = "<group>";
+		};
+		18C23A5829BA03F200C36BCE /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				18C23A5A29BA041400C36BCE /* YeoshinTVsCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		18C23A5929BA03F800C36BCE /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				18C23A5C29BA042900C36BCE /* YeoshinEventsTableViewCell.swift */,
+				183A936F29BAFDA500E7A659 /* YeoshinTVsTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		72C7A654D49F8CA79E3099BF /* Frameworks */ = {
@@ -425,14 +496,18 @@
 				18C23A3F29B92C2F00C36BCE /* HomeViewModel.swift in Sources */,
 				18C23A1229B8E2A800C36BCE /* TargetType.swift in Sources */,
 				18C23A3129B91AED00C36BCE /* Yeoshin.swift in Sources */,
+				18C23A5D29BA042900C36BCE /* YeoshinEventsTableViewCell.swift in Sources */,
 				18C23A2C29B907DD00C36BCE /* YeoshinTV.swift in Sources */,
 				18C23A2629B8FE9100C36BCE /* YeoshinResponseDTO+Mapping.swift in Sources */,
 				18C23A2A29B907D300C36BCE /* YeoshinEvent.swift in Sources */,
 				18C23A1A29B8E92E00C36BCE /* NetworkAPI.swift in Sources */,
+				183A937029BAFDA500E7A659 /* YeoshinTVsTableViewCell.swift in Sources */,
 				18C23A1629B8E2B900C36BCE /* NetworkTask.swift in Sources */,
+				183A936E29BAF68300E7A659 /* HomeTableViewSection.swift in Sources */,
 				18C23A1029B8E29D00C36BCE /* NetworkService.swift in Sources */,
 				18C23A1429B8E2B000C36BCE /* HTTPMethod.swift in Sources */,
 				18911D8A29B83D3000F5C604 /* HomeViewController.swift in Sources */,
+				18C23A5B29BA041400C36BCE /* YeoshinTVsCollectionViewCell.swift in Sources */,
 				18C23A2029B8FB5300C36BCE /* YeoshinRepository.swift in Sources */,
 				18C23A2F29B915D700C36BCE /* RepositoryError.swift in Sources */,
 				18C23A1D29B8FAD800C36BCE /* DefaultYeoshinRepository.swift in Sources */,
@@ -440,6 +515,7 @@
 				18C23A0E29B8E28B00C36BCE /* NetworkProvider.swift in Sources */,
 				18C23A1829B8E45E00C36BCE /* NetworkError.swift in Sources */,
 				18911D8629B83D3000F5C604 /* AppDelegate.swift in Sources */,
+				183A937429BB3ADF00E7A659 /* YeoshinTVsCollectionViewModel.swift in Sources */,
 				18911D8829B83D3000F5C604 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

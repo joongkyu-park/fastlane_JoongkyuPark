@@ -10,7 +10,7 @@ import Foundation
 // MARK: - Data Transfer Object
 
 struct YeoshinResponseDTO: Decodable {
-    let serverCod, serverMsg: String
+    let serverCode, serverMsg: String
     let results: ResultsDTO
 }
 

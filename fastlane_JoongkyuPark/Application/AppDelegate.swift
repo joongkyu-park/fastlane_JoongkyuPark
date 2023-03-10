@@ -11,13 +11,18 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var defaultCoordinator: HomeCoordinator?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         if #available(iOS 13.0, *) {
             return true
         }
+        let navigationController = UINavigationController()
+        defaultCoordinator = HomeCoordinator(navigationController: navigationController)
+        defaultCoordinator?.start()
+        
         window = UIWindow()
-        window?.rootViewController = HomeViewController()
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         return true
     }

@@ -10,6 +10,12 @@
 		183A936E29BAF68300E7A659 /* HomeTableViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183A936D29BAF68300E7A659 /* HomeTableViewSection.swift */; };
 		183A937029BAFDA500E7A659 /* YeoshinTVsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183A936F29BAFDA500E7A659 /* YeoshinTVsTableViewCell.swift */; };
 		183A937429BB3ADF00E7A659 /* YeoshinTVsCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183A937329BB3ADF00E7A659 /* YeoshinTVsCollectionViewModel.swift */; };
+		183A937629BB814B00E7A659 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183A937529BB814B00E7A659 /* EventDetailViewController.swift */; };
+		183A937B29BB872000E7A659 /* EventDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183A937A29BB872000E7A659 /* EventDetailViewModel.swift */; };
+		183A937E29BB887000E7A659 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183A937D29BB887000E7A659 /* HomeCoordinator.swift */; };
+		183A938229BB88E700E7A659 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183A938129BB88E700E7A659 /* Coordinator.swift */; };
+		183A938629BB933A00E7A659 /* Collection+Safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183A938529BB933A00E7A659 /* Collection+Safe.swift */; };
+		183A938829BB9CA900E7A659 /* EventDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183A938729BB9CA900E7A659 /* EventDetailCoordinator.swift */; };
 		18911D8629B83D3000F5C604 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18911D8529B83D3000F5C604 /* AppDelegate.swift */; };
 		18911D8829B83D3000F5C604 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18911D8729B83D3000F5C604 /* SceneDelegate.swift */; };
 		18911D8A29B83D3000F5C604 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18911D8929B83D3000F5C604 /* HomeViewController.swift */; };
@@ -44,6 +50,12 @@
 		183A936D29BAF68300E7A659 /* HomeTableViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewSection.swift; sourceTree = "<group>"; };
 		183A936F29BAFDA500E7A659 /* YeoshinTVsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YeoshinTVsTableViewCell.swift; sourceTree = "<group>"; };
 		183A937329BB3ADF00E7A659 /* YeoshinTVsCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YeoshinTVsCollectionViewModel.swift; sourceTree = "<group>"; };
+		183A937529BB814B00E7A659 /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
+		183A937A29BB872000E7A659 /* EventDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewModel.swift; sourceTree = "<group>"; };
+		183A937D29BB887000E7A659 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		183A938129BB88E700E7A659 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		183A938529BB933A00E7A659 /* Collection+Safe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Safe.swift"; sourceTree = "<group>"; };
+		183A938729BB9CA900E7A659 /* EventDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailCoordinator.swift; sourceTree = "<group>"; };
 		18911D8229B83D3000F5C604 /* fastlane_JoongkyuPark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fastlane_JoongkyuPark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18911D8529B83D3000F5C604 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18911D8729B83D3000F5C604 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +110,40 @@
 			path = SectionModel;
 			sourceTree = "<group>";
 		};
+		183A937F29BB887400E7A659 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				183A938029BB88CF00E7A659 /* Protocol */,
+				183A937D29BB887000E7A659 /* HomeCoordinator.swift */,
+				183A938729BB9CA900E7A659 /* EventDetailCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		183A938029BB88CF00E7A659 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				183A938129BB88E700E7A659 /* Coordinator.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		183A938329BB92F000E7A659 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				183A938429BB92F600E7A659 /* Extension */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		183A938429BB92F600E7A659 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				183A938529BB933A00E7A659 /* Collection+Safe.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		18911D7929B83D2F00F5C604 = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +168,7 @@
 		18911D8429B83D3000F5C604 /* fastlane_JoongkyuPark */ = {
 			isa = PBXGroup;
 			children = (
+				183A938329BB92F000E7A659 /* Util */,
 				18C23A3C29B92BE600C36BCE /* Presentation */,
 				18C23A2729B9077A00C36BCE /* Domain */,
 				18C23A0B29B8DF5D00C36BCE /* Data */,
@@ -263,6 +310,7 @@
 		18C23A3D29B92C1D00C36BCE /* HomeScene */ = {
 			isa = PBXGroup;
 			children = (
+				183A937F29BB887400E7A659 /* Coordinator */,
 				18C23A4029B92C4700C36BCE /* View */,
 				18C23A4129B92C4E00C36BCE /* ViewModel */,
 			);
@@ -281,6 +329,7 @@
 		18C23A4129B92C4E00C36BCE /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				183A937A29BB872000E7A659 /* EventDetailViewModel.swift */,
 				18C23A3E29B92C2E00C36BCE /* HomeViewModel.swift */,
 				183A937329BB3ADF00E7A659 /* YeoshinTVsCollectionViewModel.swift */,
 			);
@@ -299,6 +348,7 @@
 		18C23A5529BA034E00C36BCE /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				183A937529BB814B00E7A659 /* EventDetailViewController.swift */,
 				18911D8929B83D3000F5C604 /* HomeViewController.swift */,
 			);
 			path = ViewController;
@@ -498,6 +548,8 @@
 				18C23A3129B91AED00C36BCE /* Yeoshin.swift in Sources */,
 				18C23A5D29BA042900C36BCE /* YeoshinEventsTableViewCell.swift in Sources */,
 				18C23A2C29B907DD00C36BCE /* YeoshinTV.swift in Sources */,
+				183A938629BB933A00E7A659 /* Collection+Safe.swift in Sources */,
+				183A938829BB9CA900E7A659 /* EventDetailCoordinator.swift in Sources */,
 				18C23A2629B8FE9100C36BCE /* YeoshinResponseDTO+Mapping.swift in Sources */,
 				18C23A2A29B907D300C36BCE /* YeoshinEvent.swift in Sources */,
 				18C23A1A29B8E92E00C36BCE /* NetworkAPI.swift in Sources */,
@@ -506,14 +558,18 @@
 				183A936E29BAF68300E7A659 /* HomeTableViewSection.swift in Sources */,
 				18C23A1029B8E29D00C36BCE /* NetworkService.swift in Sources */,
 				18C23A1429B8E2B000C36BCE /* HTTPMethod.swift in Sources */,
+				183A937629BB814B00E7A659 /* EventDetailViewController.swift in Sources */,
 				18911D8A29B83D3000F5C604 /* HomeViewController.swift in Sources */,
 				18C23A5B29BA041400C36BCE /* YeoshinTVsCollectionViewCell.swift in Sources */,
 				18C23A2029B8FB5300C36BCE /* YeoshinRepository.swift in Sources */,
 				18C23A2F29B915D700C36BCE /* RepositoryError.swift in Sources */,
 				18C23A1D29B8FAD800C36BCE /* DefaultYeoshinRepository.swift in Sources */,
 				18C23A3B29B927A000C36BCE /* YeoshinUseCase.swift in Sources */,
+				183A938229BB88E700E7A659 /* Coordinator.swift in Sources */,
 				18C23A0E29B8E28B00C36BCE /* NetworkProvider.swift in Sources */,
 				18C23A1829B8E45E00C36BCE /* NetworkError.swift in Sources */,
+				183A937B29BB872000E7A659 /* EventDetailViewModel.swift in Sources */,
+				183A937E29BB887000E7A659 /* HomeCoordinator.swift in Sources */,
 				18911D8629B83D3000F5C604 /* AppDelegate.swift in Sources */,
 				183A937429BB3ADF00E7A659 /* YeoshinTVsCollectionViewModel.swift in Sources */,
 				18911D8829B83D3000F5C604 /* SceneDelegate.swift in Sources */,

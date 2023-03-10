@@ -73,7 +73,7 @@ extension YeoshinTVsTableViewCell {
         ])
     }
     
-    func bind(with entities: [YeoshinTV]) {
+    func bindViewModel(with entities: [YeoshinTV]) {
         let input = YeoshinTVsCollectionViewModel.Input(
             reusingTableViewCellEvent: Observable.of(entities)
         )

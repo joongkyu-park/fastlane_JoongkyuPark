@@ -22,17 +22,14 @@ final class HomeViewController: UIViewController {
         return tableView
     }()
     
-    private let viewModel = HomeViewModel(
-        yeoshinUseCase: YeoshinUseCase(
-            yeoshinRepository: DefaultYeoshinRepository(
-                networkAPI: NetworkAPI())))
+    var viewModel: HomeViewModel?
     private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setUpUI()
-        bind()
+        bindViewModel()
     }
     
     private func setUpUI() {
@@ -75,7 +72,7 @@ extension HomeViewController {
                     switch item {
                     case .yeoshinTVs(yeoshinTVs: let yeoshinTVs):
                         guard let cell = tableView.dequeueReusableCell(withIdentifier: YeoshinTVsTableViewCell.identifier, for: indexPath) as? YeoshinTVsTableViewCell else { return UITableViewCell() }
-                        cell.bind(with: yeoshinTVs)
+                        cell.bindViewModel(with: yeoshinTVs)
                         return cell
                     case .yeoshinEvent(yeoshinEvent: let yeoshinEvent):
                         guard let cell = tableView.dequeueReusableCell(withIdentifier: YeoshinEventsTableViewCell.identifier, for: indexPath) as? YeoshinEventsTableViewCell else { return UITableViewCell() }
@@ -94,18 +91,18 @@ extension HomeViewController {
 // MARK: - Data Binding
 
 extension HomeViewController {
-    private func bind() {
+    private func bindViewModel() {
         let input = HomeViewModel.Input(
             viewDidLoadEvent: Observable.just(()),
             cellDidSelectEvent: self.tableView.rx.itemSelected.map { ($0.section, $0.row) })
-        let output = viewModel.transform(from: input, disposeBag: disposeBag)
+        let output = viewModel?.transform(from: input, disposeBag: disposeBag)
 
         bindTableView(output: output)
     }
     
-    private func bindTableView(output: HomeViewModel.Output) {
+    private func bindTableView(output: HomeViewModel.Output?) {
         let dateSource = dataSource()
-        output.sections
+        output?.sections
             .bind(to: tableView.rx.items(dataSource: dateSource))
             .disposed(by: disposeBag)
     }

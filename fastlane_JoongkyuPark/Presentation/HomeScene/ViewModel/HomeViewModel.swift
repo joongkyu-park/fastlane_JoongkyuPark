@@ -11,7 +11,9 @@ import RxCocoa
 import RxSwift
 
 final class HomeViewModel {
+    weak var coordinator: HomeCoordinator?
     private let yeoshinUseCase: YeoshinUseCase
+    private var sections: [HomeTableViewSection] = []
     
     init(yeoshinUseCase: YeoshinUseCase) {
         self.yeoshinUseCase = yeoshinUseCase
@@ -42,15 +44,37 @@ extension HomeViewModel {
                 self.yeoshinUseCase.fetchYeoshin()
             })
             .disposed(by: disposeBag)
+        
+        input.cellDidSelectEvent
+            .subscribe({ [weak self] controlEvent in
+                guard let controlEvent = controlEvent.element else { return }
+                let (section, row) = (controlEvent.0, controlEvent.1)
+                guard section != 0 else { return }
+                guard let yeoshinEvent = self?.yeoshinEvent(section: section, row: row) else { return }
+                self?.coordinator?.pushEventDetailViewController(with: yeoshinEvent)
+            })
+            .disposed(by: disposeBag)
     }
     
     private func createOutput(disposeBag: DisposeBag) -> Output {
         let output = Output()
     
         self.yeoshinUseCase.sections
+            .do(onNext: { self.sections = $0 })
             .bind(to: output.sections)
             .disposed(by: disposeBag)
         
         return output
+    }
+    
+    private func yeoshinEvent(section: Int, row: Int) -> YeoshinEvent? {
+        let sectionModel = sections[safe: section]
+        let yeoshinEvent = sectionModel?.items[safe: row]
+        switch yeoshinEvent {
+        case .yeoshinEvent(let yeoshinEvent):
+            return yeoshinEvent
+        default:
+            return nil
+        }
     }
 }

@@ -9,6 +9,5 @@ import Foundation
 
 struct YeoshinTV: Equatable {
     let name: String
-    let viewCount: String
     let imageURL: String
 }

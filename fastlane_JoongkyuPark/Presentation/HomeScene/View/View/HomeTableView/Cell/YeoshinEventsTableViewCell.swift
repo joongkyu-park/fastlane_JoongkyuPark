@@ -13,30 +13,31 @@ final class YeoshinEventsTableViewCell: UITableViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 10
-        imageView.backgroundColor = .yellow
+        imageView.backgroundColor = .clear
+        imageView.image = Image.noImage
         return imageView
     }()
     private let textContainerStackView: UIStackView = {
         let stackView: UIStackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
-        stackView.backgroundColor = .clear
-        stackView.spacing = 10
+        stackView.backgroundColor = .white
+        stackView.spacing = 5
         stackView.distribution = .fill
         return stackView
     }()
     private let nameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 14)
-        label.textColor = .gray
+        label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
+        label.textColor = .darkGray
         label.numberOfLines = 1
         return label
     }()
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 17)
+        label.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
         label.textColor = .black
         label.numberOfLines = 1
         return label
@@ -44,8 +45,8 @@ final class YeoshinEventsTableViewCell: UITableViewCell {
     private let commentLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 14)
-        label.textColor = .lightGray
+        label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
+        label.textColor = .gray
         label.numberOfLines = 2
         return label
     }()
@@ -53,10 +54,10 @@ final class YeoshinEventsTableViewCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.setContentHuggingPriority(UILayoutPriority(249), for: .vertical)
-        label.font = UIFont.systemFont(ofSize: 17)
+        label.setContentCompressionResistancePriority(UILayoutPriority(249), for: .vertical)
+        label.font = UIFont.systemFont(ofSize: 17, weight: .bold)
         label.textColor = .systemPink
         label.numberOfLines = 1
-        label.text = "테스트 원"
         return label
     }()
     
@@ -74,6 +75,12 @@ final class YeoshinEventsTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        thumbnailImageView.image = Image.noImage
+    }
+    
     private func setUpUI() {
         setUpCell()
         setUpThumbnailImageView()
@@ -81,9 +88,11 @@ final class YeoshinEventsTableViewCell: UITableViewCell {
     }
 
     func updateContent(with entity: YeoshinEvent) {
+        thumbnailImageView.setImage(with: entity.imageURL)
         nameLabel.text = entity.displayName
         titleLabel.text = entity.name
         commentLabel.text = entity.comment
+        priceLabel.text = entity.price
     }
 }
 
@@ -91,7 +100,7 @@ final class YeoshinEventsTableViewCell: UITableViewCell {
 extension YeoshinEventsTableViewCell {
     private func setUpCell() {
         [thumbnailImageView, textContainerStackView].forEach { self.addSubview($0) }
-        self.backgroundColor = .clear
+        self.backgroundColor = .white
         self.selectionStyle = .none
     }
 }

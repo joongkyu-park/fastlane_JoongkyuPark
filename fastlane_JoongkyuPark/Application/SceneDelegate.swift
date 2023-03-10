@@ -14,7 +14,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var defaultCoordinator: HomeCoordinator?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        let navigationController = UINavigationController()
+        let navigationController = NavigationController()
         defaultCoordinator = HomeCoordinator(navigationController: navigationController)
         defaultCoordinator?.start()
         

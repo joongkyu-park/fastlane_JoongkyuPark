@@ -8,10 +8,10 @@
 import UIKit
 
 final class HomeCoordinator: Coordinator {
-    var navigationController: UINavigationController
+    var navigationController: NavigationController
     var childCoordinators: [Coordinator] = []
     
-    init(navigationController: UINavigationController) {
+    init(navigationController: NavigationController) {
         self.navigationController = navigationController
     }
     

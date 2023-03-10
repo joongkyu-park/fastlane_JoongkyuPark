@@ -25,6 +25,7 @@ extension EventDetailViewModel {
     }
     
     struct Output {
+        var imageURL = BehaviorRelay<String>(value: "")
         var name = BehaviorRelay<String>(value: "")
         var location = BehaviorRelay<String>(value: "")
         var title = BehaviorRelay<String>(value: "")
@@ -43,11 +44,12 @@ extension EventDetailViewModel {
     
         Observable.just(yeoshinEvent)
             .bind(onNext: { yeoshinEvent in
+                output.imageURL.accept(yeoshinEvent.imageURL)
                 output.name.accept(yeoshinEvent.customerName)
                 output.location.accept(yeoshinEvent.locationName)
                 output.title.accept(yeoshinEvent.name)
                 output.comment.accept(yeoshinEvent.comment)
-                output.price.accept(String(yeoshinEvent.price) + yeoshinEvent.currecny)
+                output.price.accept(yeoshinEvent.price)
             })
             .disposed(by: disposeBag)
         

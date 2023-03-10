@@ -9,11 +9,13 @@ import UIKit
 
 final class YeoshinTVsCollectionViewCell: UICollectionViewCell {
     private let thumbnailImageView: UIImageView = {
-        let imageView = UIImageView(frame: CGRect(origin: .zero, size: .init(width: 100.0, height: 56.25)))
+        let imageView = UIImageView(frame: CGRect(origin: .zero, size: .init(width: 150, height: 85)))
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 10
-        imageView.backgroundColor = .red
+        imageView.backgroundColor = UIColor(red: 230.0 / 255.0, green: 230.0 / 255.0, blue: 230.0 / 255.0, alpha: 1.0)
+        imageView.image = Image.noImage
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     private let titleLabel: UILabel = {
@@ -40,6 +42,12 @@ final class YeoshinTVsCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        thumbnailImageView.image = Image.noImage
+    }
+    
     private func setUpUI() {
         setUpCell()
         setUpThumbnailImageView()
@@ -47,6 +55,7 @@ final class YeoshinTVsCollectionViewCell: UICollectionViewCell {
     }
     
     func updateContent(with entity: YeoshinTV) {
+        thumbnailImageView.setImage(with: entity.imageURL)
         titleLabel.text = entity.name 
     }
 }
@@ -71,8 +80,8 @@ extension YeoshinTVsCollectionViewCell {
             thumbnailImageView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
             thumbnailImageView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
             thumbnailImageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            thumbnailImageView.widthAnchor.constraint(equalToConstant: 100.0),
-            thumbnailImageView.heightAnchor.constraint(equalToConstant: 56.25)
+            thumbnailImageView.widthAnchor.constraint(equalToConstant: 150),
+            thumbnailImageView.heightAnchor.constraint(equalToConstant: 85)
         ])
     }
 }

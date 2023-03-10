@@ -15,7 +15,7 @@ final class EventDetailViewController: UIViewController {
         let stackView: UIStackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
-        stackView.backgroundColor = .clear
+        stackView.backgroundColor = .white
         stackView.spacing = 10
         stackView.distribution = .fill
         stackView.alignment = .top
@@ -24,14 +24,15 @@ final class EventDetailViewController: UIViewController {
     private let thumbnailImageView: UIImageView = {
         let imageView = UIImageView(frame: CGRect(origin: .zero, size: .init(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width)))
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.backgroundColor = .yellow
+        imageView.backgroundColor = .clear
+        imageView.image = Image.noImage
         return imageView
     }()
     private let nameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 14)
-        label.textColor = .gray
+        label.font = UIFont.systemFont(ofSize: 15, weight: .bold)
+        label.textColor = .black
         label.numberOfLines = 1
         return label
     }()
@@ -46,8 +47,8 @@ final class EventDetailViewController: UIViewController {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 14)
-        label.textColor = .gray
+        label.font = UIFont.systemFont(ofSize: 17, weight: .medium)
+        label.textColor = .black
         label.numberOfLines = 1
         return label
     }()
@@ -63,8 +64,8 @@ final class EventDetailViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.setContentHuggingPriority(UILayoutPriority(249), for: .vertical)
-        label.font = UIFont.systemFont(ofSize: 14)
-        label.textColor = .gray
+        label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        label.textColor = .black
         label.numberOfLines = 1
         return label
     }()
@@ -81,6 +82,7 @@ final class EventDetailViewController: UIViewController {
     
     private func setUpUI() {
         setUpViewController()
+        setUpNavigationBar()
         setUpThumbnailImageView()
         setUpStackView()
     }
@@ -92,6 +94,15 @@ extension EventDetailViewController {
     private func setUpViewController() {
         [thumbnailImageView, stackView].forEach { view.addSubview($0) }
         view.backgroundColor = .white
+    }
+}
+
+// MARK: - Navigation Bar
+
+extension EventDetailViewController {
+    private func setUpNavigationBar() {
+        navigationItem.title = "이벤트"
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.black]
     }
 }
 
@@ -123,9 +134,9 @@ extension EventDetailViewController {
     
     private func setConstraintsOfStackView() {
         NSLayoutConstraint.activate([
-            stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
-            stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
-            stackView.topAnchor.constraint(equalTo: thumbnailImageView.bottomAnchor, constant: 10)
+            stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
+            stackView.topAnchor.constraint(equalTo: thumbnailImageView.bottomAnchor, constant: 20)
         ])
     }
 }
@@ -143,10 +154,12 @@ extension EventDetailViewController {
     }
     
     private func bindLabels(output: EventDetailViewModel.Output?) {
-        nameLabel.text = output?.name.value
-        locationLabel.text = output?.location.value
-        titleLabel.text = output?.title.value
-        commentLabel.text = output?.comment.value
-        priceLabel.text = output?.price.value
+        guard let output = output else { return }
+        thumbnailImageView.setImage(with: output.imageURL.value)
+        nameLabel.text = output.name.value
+        locationLabel.text = output.location.value
+        titleLabel.text = output.title.value
+        commentLabel.text = output.comment.value
+        priceLabel.text = output.price.value
     }
 }

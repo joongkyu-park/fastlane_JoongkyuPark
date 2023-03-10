@@ -18,7 +18,8 @@ final class HomeViewController: UIViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 130
         tableView.showsVerticalScrollIndicator = false
-        tableView.backgroundColor = .green
+        tableView.backgroundColor = .white
+        tableView.separatorStyle = .none
         return tableView
     }()
     
@@ -32,8 +33,15 @@ final class HomeViewController: UIViewController {
         bindViewModel()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.systemPink]
+    }
+    
     private func setUpUI() {
         setUpViewController()
+        setUpNavigationBar()
         setUpTableView()
     }
 }
@@ -47,13 +55,25 @@ extension HomeViewController {
     }
 }
 
+// MARK: - Navigation Bar
+extension HomeViewController {
+    private func setUpNavigationBar() {
+        navigationItem.title = "여신티켓"
+        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        navigationItem.backBarButtonItem = backBarButtonItem
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.systemPink]
+        navigationController?.navigationBar.tintColor = .black
+    }
+}
+
 // MARK: - TableView
 
-extension HomeViewController {
+extension HomeViewController: UITableViewDelegate {
     private func setUpTableView() {
         view.addSubview(tableView)
         tableView.register(YeoshinEventsTableViewCell.self, forCellReuseIdentifier: YeoshinEventsTableViewCell.identifier)
         tableView.register(YeoshinTVsTableViewCell.self, forCellReuseIdentifier: YeoshinTVsTableViewCell.identifier)
+        tableView.delegate = self
         setConstraintsOfTableView()
     }
 
@@ -86,6 +106,11 @@ extension HomeViewController {
                 }
             )
         }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        guard let view = view as? UITableViewHeaderFooterView else { return }
+        view.contentView.backgroundColor = .white
+    }
 }
 
 // MARK: - Data Binding

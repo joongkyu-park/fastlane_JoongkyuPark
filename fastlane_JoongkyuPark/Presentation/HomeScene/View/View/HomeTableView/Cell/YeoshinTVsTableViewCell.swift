@@ -15,10 +15,11 @@ final class YeoshinTVsTableViewCell: UITableViewCell {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 10
-        layout.itemSize = CGSize(width: 100.0, height: 80.0)
+        layout.itemSize = CGSize(width: 150, height: 120)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.showsHorizontalScrollIndicator = false
+        collectionView.backgroundColor = .white
         return collectionView
     }()
     
@@ -67,9 +68,9 @@ extension YeoshinTVsTableViewCell {
         NSLayoutConstraint.activate([
             collectionView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
-            collectionView.topAnchor.constraint(equalTo: self.topAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            collectionView.heightAnchor.constraint(equalToConstant: 90)
+            collectionView.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
+            collectionView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10),
+            collectionView.heightAnchor.constraint(equalToConstant: 120)
         ])
     }
     

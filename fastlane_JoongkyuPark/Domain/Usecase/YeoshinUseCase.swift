@@ -27,7 +27,7 @@ final class YeoshinUseCase {
                 let recommendYeoshinEvents = yeoshin.recommendYeoshinEvents
                 let newYeoshinEvents = yeoshin.newYeoshinEvents
                 var sections = [HomeTableViewSection]()
-                sections.append(HomeTableViewSection(title: "여신 TV",
+                sections.append(HomeTableViewSection(title: "여신 TV 영상",
                                         items: [HomeTableViewSectionItem.yeoshinTVs(yeoshinTVs: yeoshinTVs)]))
                 sections.append(HomeTableViewSection(title: "추천 이벤트",
                                         items: recommendYeoshinEvents.map { HomeTableViewSectionItem.yeoshinEvent(yeoshinEvent: $0) }))

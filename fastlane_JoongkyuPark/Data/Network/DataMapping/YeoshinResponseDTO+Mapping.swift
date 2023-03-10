@@ -130,20 +130,21 @@ extension YeoshinResponseDTO.ResultsDTO.EventListDTO {
                      customerName: customerName,
                      displayName: displayName,
                      locationName: locationName,
-                     price: price,
-                     currecny: currencyName.rawValue,
-                     wishCount: wishCount,
-                     reviewCount: reviewCount,
-                     rate: Double(rateScore) / Double(reviewCount),
-                     imageURL: thumbnailImageURL,
-                     isEnableReservation: reservationYn == .y ? true : false)
+                     price: price(price: price, currency: currencyName.rawValue),
+                     imageURL: thumbnailImageURL)
+    }
+    
+    private func price(price: Int, currency: String) -> String {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        guard let costText = numberFormatter.string(from: NSNumber(value: price)) else { return "null" }
+        return costText + currency
     }
 }
 
 extension YeoshinResponseDTO.ResultsDTO.YsTvListDTO {
     func toDomain() -> YeoshinTV {
         return .init(name: tvNameMain,
-                     viewCount: tvViewCount,
                      imageURL: tvFullImgURL)
     }
 }

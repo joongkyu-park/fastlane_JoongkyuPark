@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if #available(iOS 13.0, *) {
             return true
         }
-        let navigationController = UINavigationController()
+        let navigationController = NavigationController()
         defaultCoordinator = HomeCoordinator(navigationController: navigationController)
         defaultCoordinator?.start()
         

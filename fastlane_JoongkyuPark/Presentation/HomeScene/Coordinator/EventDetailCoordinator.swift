@@ -8,11 +8,11 @@
 import UIKit
 
 final class EventDetailCoordinator: Coordinator {
-    var navigationController: UINavigationController
+    var navigationController: NavigationController
     var childCoordinators: [Coordinator] = []
     weak var parentCoordinator: HomeCoordinator?
     
-    init(navigationController: UINavigationController) {
+    init(navigationController: NavigationController) {
         self.navigationController = navigationController
     }
     

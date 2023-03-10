@@ -13,11 +13,6 @@ struct YeoshinEvent: Equatable {
     let customerName: String
     let displayName: String
     let locationName: String
-    let price: Int
-    let currecny: String
-    let wishCount: Int
-    let reviewCount: Int
-    let rate: Double
+    let price: String
     let imageURL: String
-    let isEnableReservation: Bool
 }

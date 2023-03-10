@@ -16,6 +16,7 @@ final class HomeViewController: UIViewController {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 130
         tableView.showsVerticalScrollIndicator = false
         tableView.backgroundColor = .green
         return tableView
@@ -48,6 +49,8 @@ extension HomeViewController {
         view.backgroundColor = .white
     }
 }
+
+// MARK: - TableView
 
 extension HomeViewController {
     private func setUpTableView() {

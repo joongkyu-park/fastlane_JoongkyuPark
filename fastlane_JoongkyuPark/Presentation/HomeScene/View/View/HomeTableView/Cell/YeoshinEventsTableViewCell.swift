@@ -8,13 +8,13 @@
 import UIKit
 
 final class YeoshinEventsTableViewCell: UITableViewCell {
-    private let containerStackView: UIStackView = {
-        let stackView: UIStackView = UIStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .horizontal
-        stackView.backgroundColor = .clear
-        stackView.spacing = 10
-        return stackView
+    private let thumbnailImageView: UIImageView = {
+        let imageView = UIImageView(frame: CGRect(origin: .zero, size: .init(width: 90, height: 90)))
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = 10
+        imageView.backgroundColor = .yellow
+        return imageView
     }()
     private let textContainerStackView: UIStackView = {
         let stackView: UIStackView = UIStackView()
@@ -22,16 +22,12 @@ final class YeoshinEventsTableViewCell: UITableViewCell {
         stackView.axis = .vertical
         stackView.backgroundColor = .clear
         stackView.spacing = 10
+        stackView.distribution = .fill
         return stackView
-    }()
-    private let thumbnailImageView: UIImageView = {
-        let imageView = UIImageView(frame: CGRect(origin: .zero, size: .init(width: 70.0, height: 70.0)))
-        imageView.clipsToBounds = true
-        imageView.layer.cornerRadius = 10
-        return imageView
     }()
     private let nameLabel: UILabel = {
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 14)
         label.textColor = .gray
         label.numberOfLines = 1
@@ -39,6 +35,7 @@ final class YeoshinEventsTableViewCell: UITableViewCell {
     }()
     private let titleLabel: UILabel = {
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 17)
         label.textColor = .black
         label.numberOfLines = 1
@@ -46,6 +43,7 @@ final class YeoshinEventsTableViewCell: UITableViewCell {
     }()
     private let commentLabel: UILabel = {
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 14)
         label.textColor = .lightGray
         label.numberOfLines = 2
@@ -53,9 +51,12 @@ final class YeoshinEventsTableViewCell: UITableViewCell {
     }()
     private let priceLabel: UILabel = {
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.setContentHuggingPriority(UILayoutPriority(249), for: .vertical)
         label.font = UIFont.systemFont(ofSize: 17)
         label.textColor = .systemPink
         label.numberOfLines = 1
+        label.text = "테스트 원"
         return label
     }()
     
@@ -75,7 +76,7 @@ final class YeoshinEventsTableViewCell: UITableViewCell {
     
     private func setUpUI() {
         setUpCell()
-        setUpContainerStackView()
+        setUpThumbnailImageView()
         setUpTextContainerStackView()
     }
 
@@ -89,27 +90,25 @@ final class YeoshinEventsTableViewCell: UITableViewCell {
 // MARK: - Cell
 extension YeoshinEventsTableViewCell {
     private func setUpCell() {
-        self.addSubview(containerStackView)
+        [thumbnailImageView, textContainerStackView].forEach { self.addSubview($0) }
         self.backgroundColor = .clear
         self.selectionStyle = .none
-        self.isUserInteractionEnabled = true
     }
 }
 
-// MARK: - Container StackView
+// MARK: - Thumbnail ImageView
 
 extension YeoshinEventsTableViewCell {
-    private func setUpContainerStackView() {
-        [thumbnailImageView, textContainerStackView].forEach { containerStackView.addArrangedSubview($0) }
-        setConstraintsOfContainerStackView()
+    private func setUpThumbnailImageView() {
+        setConstraintsOfThumbnailImageView()
     }
     
-    private func setConstraintsOfContainerStackView() {
+    private func setConstraintsOfThumbnailImageView() {
         NSLayoutConstraint.activate([
-            containerStackView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
-            containerStackView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
-            containerStackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            containerStackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
+            thumbnailImageView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            thumbnailImageView.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor),
+            thumbnailImageView.widthAnchor.constraint(equalToConstant: 90),
+            thumbnailImageView.heightAnchor.constraint(equalToConstant: 90)
         ])
     }
 }
@@ -118,6 +117,16 @@ extension YeoshinEventsTableViewCell {
 
 extension YeoshinEventsTableViewCell {
     private func setUpTextContainerStackView() {
-        [nameLabel, titleLabel, commentLabel, priceLabel].forEach { containerStackView.addArrangedSubview($0) }
+        [nameLabel, titleLabel, commentLabel, priceLabel].forEach { textContainerStackView.addArrangedSubview($0) }
+        setConstraintsOfTextContainerStackView()
+    }
+    
+    private func setConstraintsOfTextContainerStackView() {
+        NSLayoutConstraint.activate([
+            textContainerStackView.leadingAnchor.constraint(equalTo: thumbnailImageView.trailingAnchor, constant: 10),
+            textContainerStackView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -10),
+            textContainerStackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 10),
+            textContainerStackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -10)
+        ])
     }
 }

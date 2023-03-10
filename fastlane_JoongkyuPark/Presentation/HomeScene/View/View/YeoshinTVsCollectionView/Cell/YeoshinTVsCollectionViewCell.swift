@@ -13,6 +13,7 @@ final class YeoshinTVsCollectionViewCell: UICollectionViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 10
+        imageView.backgroundColor = .red
         return imageView
     }()
     private let titleLabel: UILabel = {
@@ -21,6 +22,7 @@ final class YeoshinTVsCollectionViewCell: UICollectionViewCell {
         label.font = UIFont.systemFont(ofSize: 14)
         label.textColor = .black
         label.numberOfLines = 1
+        label.textAlignment = .center
         return label
     }()
     
@@ -41,7 +43,7 @@ final class YeoshinTVsCollectionViewCell: UICollectionViewCell {
     private func setUpUI() {
         setUpCell()
         setUpThumbnailImageView()
-        setUpNameLabel()
+        setUpTitleLabel()
     }
     
     func updateContent(with entity: YeoshinTV) {
@@ -68,7 +70,9 @@ extension YeoshinTVsCollectionViewCell {
         NSLayoutConstraint.activate([
             thumbnailImageView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
             thumbnailImageView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
-            thumbnailImageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor)
+            thumbnailImageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            thumbnailImageView.widthAnchor.constraint(equalToConstant: 100.0),
+            thumbnailImageView.heightAnchor.constraint(equalToConstant: 56.25)
         ])
     }
 }
@@ -76,11 +80,11 @@ extension YeoshinTVsCollectionViewCell {
 // MARK: - Title Label
 
 extension YeoshinTVsCollectionViewCell {
-    private func setUpNameLabel() {
-        setConstraintsOfNameLabel()
+    private func setUpTitleLabel() {
+        setConstraintsOfTitleLabel()
     }
     
-    private func setConstraintsOfNameLabel() {
+    private func setConstraintsOfTitleLabel() {
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
             titleLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),

@@ -20,7 +20,7 @@ final class HomeCoordinator: Coordinator {
         let homeViewModel = HomeViewModel(
             yeoshinUseCase: YeoshinUseCase(
                 yeoshinRepository: DefaultYeoshinRepository(
-                    networkAPI: NetworkAPI())))
+                    networkService: NetworkService())))
         homeViewModel.coordinator = self
         homeViewController.viewModel = homeViewModel
         navigationController.pushViewController(homeViewController, animated: true)
@@ -32,5 +32,4 @@ final class HomeCoordinator: Coordinator {
         childCoordinators.append(eventDetailCoordinator)
         eventDetailCoordinator.start(with: yeoshinEvent)
     }
-    
 }

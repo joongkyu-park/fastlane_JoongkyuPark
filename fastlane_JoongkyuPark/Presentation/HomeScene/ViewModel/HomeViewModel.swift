@@ -13,7 +13,7 @@ import RxSwift
 final class HomeViewModel {
     weak var coordinator: HomeCoordinator?
     private let yeoshinUseCase: YeoshinUseCase
-    private var sections: [HomeTableViewSection] = []
+    private var sections: [HomeSection] = []
     
     init(yeoshinUseCase: YeoshinUseCase) {
         self.yeoshinUseCase = yeoshinUseCase
@@ -27,7 +27,7 @@ extension HomeViewModel {
     }
     
     struct Output {
-        var sections = BehaviorRelay<[HomeTableViewSection]>(value: [])
+        var sections = BehaviorRelay<[HomeSection]>(value: [])
     }
 }
 
@@ -41,7 +41,7 @@ extension HomeViewModel {
         input.viewDidLoadEvent
             .subscribe(onNext: { [weak self] in
                 guard let self = self else { return }
-                self.yeoshinUseCase.fetchYeoshin()
+                self.yeoshinUseCase.fetchYeoshinItem()
             })
             .disposed(by: disposeBag)
         

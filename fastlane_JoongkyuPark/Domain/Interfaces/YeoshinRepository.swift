@@ -10,5 +10,5 @@ import Foundation
 import RxSwift
 
 protocol YeoshinRepository {
-    func fetchYeoshin() -> Observable<Yeoshin>
+    func fetchYeoshinItem() -> Observable<YeoshinItem>
 }

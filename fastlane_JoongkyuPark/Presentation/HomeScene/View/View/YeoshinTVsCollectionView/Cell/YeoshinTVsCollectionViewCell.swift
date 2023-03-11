@@ -8,6 +8,10 @@
 import UIKit
 
 final class YeoshinTVsCollectionViewCell: UICollectionViewCell {
+    static var identifier: String {
+        return String(describing: Self.self)
+    }
+    
     private let thumbnailImageView: UIImageView = {
         let imageView = UIImageView(frame: CGRect(origin: .zero, size: .init(width: 150, height: 85)))
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -27,10 +31,6 @@ final class YeoshinTVsCollectionViewCell: UICollectionViewCell {
         label.textAlignment = .center
         return label
     }()
-    
-    static var identifier: String {
-        return String(describing: Self.self)
-    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)

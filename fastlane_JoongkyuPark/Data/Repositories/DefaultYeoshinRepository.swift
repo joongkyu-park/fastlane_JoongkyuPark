@@ -10,14 +10,14 @@ import Foundation
 import RxSwift
 
 final class DefaultYeoshinRepository: YeoshinRepository {
-    private let networkAPI: NetworkAPI
+    private let networkService: NetworkService
     
-    init(networkAPI: NetworkAPI) {
-        self.networkAPI = networkAPI
+    init(networkService: NetworkService) {
+        self.networkService = networkService
     }
     
-    func fetchYeoshin() -> Observable<Yeoshin> {
-        return networkAPI.get(targetType: .getYeoshin)
+    func fetchYeoshinItem() -> Observable<YeoshinItem> {
+        return networkService.get(targetType: .getYeoshinData)
             .map({ result in
                 switch result {
                 case .success(let data):

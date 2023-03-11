@@ -1,5 +1,5 @@
 //
-//  NetworkAPI.swift
+//  NetworkService.swift
 //  fastlane_JoongkyuPark
 //
 //  Created by Apple on 2023/03/09.
@@ -9,12 +9,12 @@ import Foundation
 
 import RxSwift
 
-struct NetworkAPI {
-    private let provider = NetworkProvider<NetworkService>()
+struct NetworkService {
+    private let provider = NetworkProvider<Target>()
 }
 
-extension NetworkAPI {
-    func get(targetType: NetworkService) -> Observable<Result<Data, NetworkError>> {
+extension NetworkService {
+    func get(targetType: Target) -> Observable<Result<Data, NetworkError>> {
         return Observable.create { emitter in
             do {
                 let request = try provider.request(targetType)

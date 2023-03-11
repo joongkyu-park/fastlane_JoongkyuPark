@@ -116,7 +116,7 @@ extension YeoshinResponseDTO.ResultsDTO {
 // MARK: - Mappings to Domain
 
 extension YeoshinResponseDTO {
-    func toDomain() -> Yeoshin {
+    func toDomain() -> YeoshinItem {
         return .init(yeoshinTVs: results.ysTvList.map { $0.toDomain() },
                      recommendYeoshinEvents: results.recommendEventList.map { $0.toDomain() },
                      newYeoshinEvents: results.newEventList.map { $0.toDomain() })

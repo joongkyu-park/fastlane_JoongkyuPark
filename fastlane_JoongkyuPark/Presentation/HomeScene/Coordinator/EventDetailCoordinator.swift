@@ -23,5 +23,4 @@ final class EventDetailCoordinator: Coordinator {
         eventDetailViewController.viewModel = eventDetailViewModel
         navigationController.pushViewController(eventDetailViewController, animated: true)
     }
-    
 }

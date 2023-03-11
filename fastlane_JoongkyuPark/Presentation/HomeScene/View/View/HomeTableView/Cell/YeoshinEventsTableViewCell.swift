@@ -8,6 +8,10 @@
 import UIKit
 
 final class YeoshinEventsTableViewCell: UITableViewCell {
+    static var identifier: String {
+        return String(describing: Self.self)
+    }
+    
     private let thumbnailImageView: UIImageView = {
         let imageView = UIImageView(frame: CGRect(origin: .zero, size: .init(width: 90, height: 90)))
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -60,10 +64,6 @@ final class YeoshinEventsTableViewCell: UITableViewCell {
         label.numberOfLines = 1
         return label
     }()
-    
-    static var identifier: String {
-        return String(describing: Self.self)
-    }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

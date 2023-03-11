@@ -1,5 +1,5 @@
 //
-//  Yeoshin.swift
+//  YeoshinItem.swift
 //  fastlane_JoongkyuPark
 //
 //  Created by Apple on 2023/03/09.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Yeoshin: Equatable {
+struct YeoshinItem: Equatable {
     let yeoshinTVs: [YeoshinTV]
     let recommendYeoshinEvents: [YeoshinEvent]
     let newYeoshinEvents: [YeoshinEvent]

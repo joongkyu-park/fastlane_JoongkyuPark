@@ -86,8 +86,8 @@ extension HomeViewController: UITableViewDelegate {
         ])
     }
     
-    private func dataSource() -> RxTableViewSectionedReloadDataSource<HomeTableViewSection> {
-            return RxTableViewSectionedReloadDataSource<HomeTableViewSection>(
+    private func dataSource() -> RxTableViewSectionedReloadDataSource<HomeSection> {
+            return RxTableViewSectionedReloadDataSource<HomeSection>(
                 configureCell: { _, tableView, indexPath, item in
                     switch item {
                     case .yeoshinTVs(yeoshinTVs: let yeoshinTVs):

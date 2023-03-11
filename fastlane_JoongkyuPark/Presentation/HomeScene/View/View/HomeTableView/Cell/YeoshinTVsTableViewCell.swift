@@ -11,6 +11,10 @@ import RxCocoa
 import RxSwift
 
 final class YeoshinTVsTableViewCell: UITableViewCell {
+    static var identifier: String {
+        return String(describing: Self.self)
+    }
+    
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -22,10 +26,6 @@ final class YeoshinTVsTableViewCell: UITableViewCell {
         collectionView.backgroundColor = .white
         return collectionView
     }()
-    
-    static var identifier: String {
-        return String(describing: Self.self)
-    }
     
     private let viewModel = YeoshinTVsCollectionViewModel()
     private let disposeBag = DisposeBag()
@@ -96,5 +96,4 @@ extension YeoshinTVsTableViewCell {
             }
             .disposed(by: disposeBag)
     }
-
 }

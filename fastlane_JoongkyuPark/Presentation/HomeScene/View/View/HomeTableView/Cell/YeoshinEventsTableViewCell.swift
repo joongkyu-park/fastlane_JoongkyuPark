@@ -32,7 +32,6 @@ final class YeoshinEventsTableViewCell: UITableViewCell {
     }()
     private let nameLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         label.textColor = .darkGray
         label.numberOfLines = 1
@@ -40,7 +39,6 @@ final class YeoshinEventsTableViewCell: UITableViewCell {
     }()
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
         label.textColor = .black
         label.numberOfLines = 1
@@ -48,7 +46,6 @@ final class YeoshinEventsTableViewCell: UITableViewCell {
     }()
     private let commentLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         label.textColor = .gray
         label.numberOfLines = 2

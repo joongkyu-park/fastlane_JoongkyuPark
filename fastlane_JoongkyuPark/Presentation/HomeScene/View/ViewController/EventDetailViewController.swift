@@ -30,7 +30,6 @@ final class EventDetailViewController: UIViewController {
     }()
     private let nameLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 15, weight: .bold)
         label.textColor = .black
         label.numberOfLines = 1
@@ -38,7 +37,6 @@ final class EventDetailViewController: UIViewController {
     }()
     private let locationLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 14)
         label.textColor = .gray
         label.numberOfLines = 1
@@ -46,7 +44,6 @@ final class EventDetailViewController: UIViewController {
     }()
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 17, weight: .medium)
         label.textColor = .black
         label.numberOfLines = 1
@@ -54,16 +51,13 @@ final class EventDetailViewController: UIViewController {
     }()
     private let commentLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 14)
         label.textColor = .gray
-        label.numberOfLines = 0
+        label.numberOfLines = 2
         return label
     }()
     private let priceLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.setContentHuggingPriority(UILayoutPriority(249), for: .vertical)
         label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         label.textColor = .black
         label.numberOfLines = 1
@@ -136,7 +130,8 @@ extension EventDetailViewController {
         NSLayoutConstraint.activate([
             stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
             stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
-            stackView.topAnchor.constraint(equalTo: thumbnailImageView.bottomAnchor, constant: 20)
+            stackView.topAnchor.constraint(equalTo: thumbnailImageView.bottomAnchor, constant: 20),
+            stackView.bottomAnchor.constraint(lessThanOrEqualTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
 }
